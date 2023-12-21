@@ -25,8 +25,6 @@ def late_list (grades: dict, deadline_date: str) -> list[str]:
         if datetime.strptime(pass_date, "%d.%m.%Y")>datetime.strptime(deadline_date, "%d.%m.%Y"):
             turned_in_late_students.append(student)
     if turned_in_late_students:
-        return turned_in_late_students
+        return sorted(turned_in_late_students)
     else:
         return "тут нет должников ура"
-
-
