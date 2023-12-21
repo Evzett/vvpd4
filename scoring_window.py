@@ -13,6 +13,9 @@ from PyQt5.QtWidgets import QWidget
 from practice4 import deadline_score
 
 class DeadlineScoresWindow(QWidget):
+    """Класс окна, всплывающего при выборе "Определить оценку"
+    на стартовом окне
+    """
     def setupUi(self, deadline_scores_window):
         deadline_scores_window.setObjectName("deadline_scores_window")
         deadline_scores_window.resize(442, 365)
@@ -59,6 +62,9 @@ class DeadlineScoresWindow(QWidget):
         self.retranslateUi(deadline_scores_window)
         QtCore.QMetaObject.connectSlotsByName(deadline_scores_window)
     def show_mark(self):
+        """Метод, вызывающий функцию из модуля practice4,
+        которая определяет оценку в зависимости от даты
+        сдачи и дедлайна"""
         self.current_pass_date=self.pass_date_lineEdit.text()
         self.current_deadline_date=self.deadline_date_lineEdit.text()
         result=deadline_score(self.current_pass_date,self.current_deadline_date)

@@ -15,6 +15,9 @@ from PyQt5.QtWidgets import QWidget, QApplication
 from practice4 import late_list
 
 class LateListWindow(QWidget):
+    """Класс окна, всплывающего при выборе "Узнать должников"
+    на стартовом окне
+    """
     def setupUi(self, late_list_window):
         late_list_window.setObjectName("late_list_window")
         late_list_window.resize(508, 403)
@@ -59,6 +62,8 @@ class LateListWindow(QWidget):
         self.show_students_in_late_pushButton.clicked.connect(self.show_late_students)
         QtCore.QMetaObject.connectSlotsByName(late_list_window)
     def show_late_students(self):
+        """Метод, позволяющий считать текст с интерфейса и применить
+        функцию late_list из модуля practice4"""
         inp_students=self.students_with_date_plainTextEdit.toPlainText().split('\n')
         try:
             students={}
@@ -68,8 +73,8 @@ class LateListWindow(QWidget):
                     students[student.strip()] = pass_date.strip()
             deadline_date=self.deadline_date_lineEdit.text()
             result=', '.join(late_list(students,deadline_date))
-            if result==', '.join("тут нет должников ура"):
-                self.show_results_students_label.setText("тут нет должников ура")
+            if result==', '.join("тут нет студентов"):
+                self.show_results_students_label.setText("тут нет студентов")
             else:
 
                 self.show_results_students_label.setText(result)

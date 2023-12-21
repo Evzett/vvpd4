@@ -15,6 +15,7 @@ from students_in_late_window import LateListWindow
 from scoring_window import DeadlineScoresWindow
 
 class StartedWindow(QWidget):
+    """Стартовое окно при запуске программы, содержащее две кнопки"""
     def setupUi(self, startes_window):
         startes_window.setObjectName("startes_window")
         startes_window.resize(400, 300)
@@ -50,6 +51,8 @@ class StartedWindow(QWidget):
         self.retranslateUi(startes_window)
         QtCore.QMetaObject.connectSlotsByName(startes_window)
     def show_scoring_window(self):
+        """Метод(слот), обрабатывающий всплывающее окно с
+        определением оценки"""
 
         self.scoring_window=DeadlineScoresWindow()
         self.scoring_window.setupUi(self.scoring_window)
@@ -57,6 +60,9 @@ class StartedWindow(QWidget):
 
 
     def show_students_in_late(self):
+        """Метод(слот), обрабатывающий всплывающее окно с
+                определением студентов, сдавших
+                работу позже дедлайна"""
         self.late_students = LateListWindow()
         self.late_students.setupUi(self.late_students)
         self.late_students.show()
@@ -64,19 +70,11 @@ class StartedWindow(QWidget):
 
 
     def retranslateUi(self, startes_window):
+
         _translate = QtCore.QCoreApplication.translate
         startes_window.setWindowTitle(_translate("startes_window", "Form"))
         self.choose_label.setText(_translate("startes_window", "Выберите, что вы хотите сделать"))
-        self.deadline_score_button.setText(_translate("startes_window", "Рассчитать оценку в зависимости\n"
+        self.deadline_score_button.setText(_translate("startes_window", "Определить оценку в зависимости\n"
 " от срока дедлайна"))
         self.view_late_students_button.setText(_translate("startes_window", "Узнать \"должников\""))
 
-
-app = QtWidgets.QApplication(sys.argv)
-window = QtWidgets.QWidget()
-mainwindow = StartedWindow()
-mainwindow.setupUi(window)
-
-
-window.show()
-sys.exit(app.exec_())
