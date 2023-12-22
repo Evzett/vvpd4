@@ -1,3 +1,4 @@
+
 ![pctr_cat](https://raw.githubusercontent.com/Evzett/vvpd4/task%231/photo_2023-12-21_23-15-54.jpg)
 # VVPD4
 Этот репозиторий был создан в образовательных целях в качестве практической работы по предмету "Введение в проффесиональную деятельность".
@@ -25,7 +26,7 @@ timedelta - разница в днях между датой сдачи рабо
 
  В модулях *started_window.py*, *scoring_window.py* и *students_in_late_window.py* реализован небольшой графический интерфейс с помощью библиотеки [PyQt5](https://pypi.org/project/PyQt5/).
 
-При запуске программы пользователь может увидеть 
+
 ### Как загрузить библиотеку
 ```
 pip install PyQt5
@@ -47,3 +48,4 @@ python main.py
 - [X] Отбор мемов для файла(неудачный)
 
 ![сложный выбор](https://raw.githubusercontent.com/Evzett/vvpd4/task%231/import%20numpy.jpg)
+>>>>>>> 25e9b0a984c3880eb224ad467ec8726ac265d788
