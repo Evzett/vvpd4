@@ -25,7 +25,7 @@ timedelta - разница в днях между датой сдачи рабо
 
  В модулях *started_window.py*, *scoring_window.py* и *students_in_late_window.py* реализован небольшой графический интерфейс с помощью библиотеки [PyQt5](https://pypi.org/project/PyQt5/).
 
-При запуске программы пользователь может увидеть 
+
 ### Как загрузить библиотеку
 ```
 pip install PyQt5
